@@ -1,0 +1,1023 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;color: inherit;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+
+body {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #fff;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+[class*="__container"] {
+    max-width: 1087px;     /*  добавляем 30 пикселей  два по 15 к основному размеру из за пад 15 рх*/
+    margin: 0 auto;
+    padding: 0 15px;      /* -- добавляем 15 пик чтобы не прилипал контент - адаптация  */
+}
+
+
+/* ===================================   city ================================== */
+.page__city {
+    background: url('../img/city.jpg') 0px 0px / cover no-repeat;
+    padding: 100px 0px 100px 0px;
+}
+
+
+.traffic-light {
+    padding: 15px 0px;
+    width: 100px;
+    background: rgb(48, 40, 40);
+    border-radius: 10px;
+    position: relative;
+    margin: 0px 0px 200px 0px;
+}
+
+.traffic-light__red {
+    margin: 0 auto 15px;
+    width: 80px;
+    height: 80px;
+    background: #866969;
+    border-radius: 50%;
+   animation-name: turn-red;
+
+   animation-duration: 3.7s;
+   animation-delay: 0.2s;
+
+}
+@keyframes turn-red {
+    0% {
+        background: #866969;
+        transform: scale(1.1);
+    }
+    100% {
+        background: #f50606;
+        transform: scale(1.1);
+    }
+}
+
+
+.traffic-light__yellow {
+    margin: 0 auto 15px;
+    width: 80px;
+    height: 80px;
+    background: rgb(134, 105, 105);
+    border-radius: 50%;
+   animation-name: turn-yellow;
+   animation-duration: 2s;
+   animation-delay: 4s;
+}
+@keyframes turn-yellow {
+    0% {
+        background: #866969;
+        transform: scale(1.1);
+    }
+    100% {
+        background: #fae314;
+        transform: scale(1.1);
+    }
+}
+
+
+
+.traffic-light__green {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    background: rgb(134, 105, 105);
+    border-radius: 50%;
+    animation-name: turn-green;
+    animation-duration: 4s;
+    animation-delay: 6.0s;
+    
+}
+@keyframes turn-green {
+    0% {
+        background: #866969;
+        
+    }
+   10% {
+        transform: scale(1.1);
+   }
+    100% {
+        background: #3beb06;
+       
+    }
+}
+
+
+.car {
+ 
+}
+
+.car__body {
+    margin: 0px 0px 0px 495px;
+    width: 600px;
+    height: 100px;
+    background: yellow;
+    border-radius: 127px 106px 27px 27px;
+    position: relative;
+    /* transform: translate(0px,-46px); */
+   /* animation-name: car;
+    animation-duration: 3.0s;
+    animation-timing-function: linear;
+    animation-delay: 0.0s;
+    animation-fill-mode: forwards;
+
+     /* Декілька параметрів */
+	/* animation: rotate-block 1s linear 1 normal running 0s forwards; */
+
+    animation: car 3.0s  linear 0s forwards,
+               car2 3.0s  linear 7s forwards;
+    
+   /* animation-name: car;
+    animation-duration: 3.0s;
+    animation-delay: 0.0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear,*/
+}
+@keyframes car {
+    0% {
+        transform: translate(250%,-46%);
+    }
+    100% {
+        transform: translate(0%,-46%);
+    }
+ 
+}
+@keyframes car2 {
+    0% {
+        transform: translate(0%,-46%);
+    }
+    100% {
+        transform: translate(-300%,-46%);
+    }
+ 
+}
+
+
+
+.car__body::before {
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: rgb(245, 176, 3);
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    left: 41px;
+    outline: #000 dashed 10px;
+    animation: spin 3.0s linear 0s forwards,
+                spin 3.0s linear 7s forwards;
+}
+.car__body::after {
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: rgb(245, 176, 3);
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    right: 41px;
+    outline: #000 dashed 10px;
+    animation: spin 3.0s linear 0s forwards,
+                spin 3.0s linear 7s forwards;
+   /* animation-name: spin;
+    animation-duration: 3.0s;
+    animation-delay: 0.0s;
+    animation-timing-function: linear;*/
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.body-car__door-driver {
+    position: absolute;
+    top: 5px;
+    left: 185px;
+    width: 120px;
+    height: 80px;
+    background: yellow;
+    border-bottom: #c4bd1d solid 3px;
+    border-right: #c4bd1d solid 3px;
+    border-left: #c4bd1d solid 3px;
+}
+.body-car__door-passenger {
+    position: absolute;
+    top: 5px;
+    right: 166px;
+    width: 120px;
+    height: 80px;
+    background: yellow;
+    border-bottom: #c4bd1d solid 3px;
+    border-right: #c4bd1d solid 3px;
+    border-left: #c4bd1d solid 3px;
+}
+.body-car__headlight {
+    width: 50px;
+    height: 50px;
+    background: rgb(22, 219, 219);
+    position: absolute;
+    top: 39px;
+    left: -19px;
+    border-radius: 95px 0px 0px 0px;
+}
+.body-car__stop {
+    width: 23px;
+    height: 50px;
+    background: rgb(236, 26, 11);
+    position: absolute;
+    top: 30px;
+    right: -6px;
+    border-radius: 0px 50px 50px 0px;
+}
+.body-car__window-driver {
+    width: 150px;
+    height: 200px;
+    border: 15px solid yellow;
+    position: absolute;
+    top: -192px;
+    left: 165px;
+    border-radius: 75px 0px 0px 0px;
+}
+.body-car__window-passenger {
+    width: 218px;
+    height: 200px;
+    border: 15px solid yellow;
+    position: absolute;
+    top: -192px;
+    right: 77px;
+    border-radius: 0px 90px 0px 0px;
+}
+.body-car__window-passenger::after {
+    content: '';
+    width: 192px;
+    height: 170px;
+    background: #000;
+    opacity: 0.8;
+    position: absolute;
+    top: 0px;
+    right: -3px;
+    border-radius: 0px 75px 0px 0px;
+}
+
+
+/*  ------------------  driver -------------- */
+.driver {
+    position: absolute;
+    top: -202px;
+    left: 224px;
+}
+.driver__body {
+    position: relative;
+  
+}
+.body__hair {
+    width: 70px;
+    height: 30px;
+    background: #FF573A;
+    border-radius: 25px 0px 25px 0px;
+    margin: 0px 0px -10px 0px;
+    position: relative;
+    top: 0px;
+    left: 11px;
+    z-index: 15;
+   
+}
+.body__hair::before {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #f68571;
+    border-radius: 25px;
+    position: absolute;
+    top: 6px;
+    left: 15px;
+}
+.body__head {
+    width: 74px;
+    height: 103px;
+    background: #FFC397;
+    border-radius: 50px;
+    position: relative;
+    z-index: 10;
+   
+}
+.body__head::before {  /*  --- вухо ліве ---- */
+    content: '';
+    width: 20px;
+    height: 25px;
+    border-radius: 25px;
+    background: #FFC397;
+    position: absolute;
+    top: 29px;
+    left: -9px;
+    
+}
+.body__head::after {  /*  --- вухо праве ---- */
+    content: '';
+    width: 20px;
+    height: 25px;
+    border-radius: 25px;
+    background: #FFC397;
+    position: absolute;
+    top: 29px;
+    right: -9px;
+    
+}
+.body__left-eye {
+    width: 15px;
+    height: 25px;
+    background: #000;
+    position: relative;
+    top: -70px;
+    left: 11px;
+    border-radius: 25px;
+    z-index: 10;
+   
+}
+.body__left-eye::before {
+    content: '';
+    width: 15px;
+    height: 4px;
+    border-radius: 50px;
+    background: #FF573A;
+    position: absolute;
+    top: -7px;
+    left: 0px;
+}
+.body__left-eye::after {
+    content: '';
+    width: 8px;
+    height: 10px;
+    background: #fff;
+    border-radius: 25px;
+    position: absolute;
+    top: 7px;
+    left: 4px;
+}
+.body__right-eye {
+    width: 15px;
+    height: 25px;
+    background: #000;
+    position: relative;
+    top: -94px;
+    left: 45px;
+    border-radius: 25px;
+    z-index: 10;
+}
+.body__right-eye::before {
+    content: '';
+    width: 15px;
+    height: 4px;
+    border-radius: 50px;
+    background: #FF573A;
+    position: absolute;
+    top: -7px;
+    left: 0px;
+}
+.body__right-eye::after {
+    content: '';
+    width: 8px;
+    height: 10px;
+    background: #fff;
+    border-radius: 25px;
+    position: absolute;
+    top: 7px;
+    left: 4px;
+}
+.body__nose {
+    width: 16px;
+    height: 30px;
+    background: #911e1e;
+    position: absolute;
+    top: 59px;
+    left: 27px;
+    border-radius: 25px;
+    z-index: 10;
+}
+.body__mouth {
+    width: 42px;
+    height: 20px;
+    background: #fff;
+    border-radius: 0px 0px 25px 25px;
+    position: absolute;
+    top: 93px;
+    left: 15px;
+    z-index: 10;
+}
+.body__torso {
+    width: 72px;
+    height: 89px;
+    background: #1175ee;
+    border-radius: 25px 25px 0px 0px;
+    position: absolute;
+    top: 106px;
+    left: 0px;
+    z-index: 5;
+}
+.body__shoulder-left {
+    width: 25px;
+    height: 80px;
+    border-radius: 50px;
+    background: #0e5ec0;
+    position: absolute;
+    top: 119px;
+    left: 55px;
+    z-index: 16;
+}
+.body__forearm-left {
+    width: 65px;
+    height: 25px;
+    border-radius: 0px 50px 50px 0px;
+    background: #0e5ec0;
+    position: absolute;
+    top: 176px;
+    left: 15px;
+    z-index: 16;
+}
+.body__forearm-left::before {
+    content: '';
+    width: 30px;
+    height: 45px;
+    background: #f68571;
+    border-radius: 25px;
+    position: absolute;
+    top: 0px;
+    left: -16px;
+}
+.body__shoulder-right {
+    width: 25px;
+    height: 71px;
+    border-radius: 50px;
+    background: #0e5ec0;
+    position: absolute;
+    top: 119px;
+    left: -10px;
+    /* z-index: 3; */
+}
+.body__forearm-right {
+    width: 65px;
+    height: 25px;
+    border-radius: 0px 50px 50px 0px;
+    background: #0e5ec0;
+    position: absolute;
+    top: 168px;
+    left: -23px;
+   
+}
+.body__hand {
+    width: 30px;
+    height: 45px;
+    background: #f68571;
+    border-radius: 25px;
+    position: absolute;
+    top: 150px;
+    left: -43px;
+}
+.body__hand::after {
+    content: '';
+    width: 15px;
+    height: 44px;
+    border-radius: 25px 25px 0px 0px;
+    background: #000;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+
+}
+
+/* ===================================  man  ========================================= */
+.page__man {
+}
+.man {
+    position: absolute;
+    top: -219px;
+    left: 418px;
+    padding: 0px 0px 150px 0px;
+
+}
+
+
+
+
+/* ------------------------------ face -------------------------- */
+
+.head-man__face {
+}
+
+.face-head-man__left-eye {
+    width: 13px;
+    height: 20px;
+    background: #000;
+    border-radius: 25px;
+    transform: translate(12px,26px);
+    position: relative;
+}
+.face-head-man__left-eye::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.face-head-man__right-eye {
+}
+.face-head-man__nose {
+    width: 13px;
+    height: 20px;
+    background: #eab691;
+    border-radius: 25px;
+    transform: translate(-4px,14px);
+}
+.face-head-man__nose::before {
+    content: '';
+    width: 40px;
+    height: 15px;
+    background: #fff;
+    border-radius: 25px;
+    position: absolute;
+    top: 23px;
+    left: 12px;
+}
+/* ------------------------------  head  ------------------------ */
+.man__head {
+}
+.head-man__body {
+    position: relative;
+    transform-origin: 50% 100%;
+    transform: translate(-72px,191px) rotate(306deg);
+    z-index: 51;
+    animation: head 5.0s linear 3.0s forwards;
+}
+@keyframes head {
+    0% {
+        transform: translate(-72px,191px) rotate(306deg);
+    }
+    20% {
+        transform: translate(-72px,191px) rotate(340deg);
+    }
+    80% {
+        transform: translate(-72px,191px) rotate(340deg);
+    }
+    100% {
+        transform: translate(-72px,191px) rotate(306deg);
+    }
+}
+
+.head-man__hair {
+    width: 40px;
+    height: 50px;
+    background: #f2921d;
+    border-radius: 25px;
+    transform: translate(34px,42px);
+    position: relative;
+    z-index: 11;
+}
+.head-man__hair::before {
+    content: '';
+    width: 45px;
+    height: 45px;
+    background: #e78b1b;
+    border-radius: 50%;
+    position: absolute;
+    top: -11px;
+    left: -38px;
+}
+.head-man__hair::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFC397;
+    position: absolute;
+    top: 34px;
+    left: 23px;
+}
+.head-man__face {
+    width: 68px;
+    height: 81px;
+    background: #FFC397;
+    border-radius: 30px;
+    transform: translate(0px,0px);
+    position: relative;
+    z-index: 10;
+}
+
+.head-man__neck {
+    width: 34px;
+    height: 45px;
+    background: #eab691;
+    border-radius: 30px;
+    transform: translate(24px,-19px);
+}
+
+
+
+
+/*          ----------------------  torso  ----------------------- */
+
+.man__torso {
+    position: relative;
+    z-index: 50;
+}
+.torso-man {
+}
+.torso-man__body {
+    width: 79px;
+    height: 109px;
+    background: #008894;
+    border-radius: 52px 25px 0px 0px;
+    transform: translate(-58px,95px) rotate(-45deg);
+
+}
+.torso-man__left-shoulder {
+    width: 39px;
+    height: 61px;
+    background: #db4b12;
+    border-radius: 50px 50px 50px 50px;
+    transform: translate(-49px,185px) rotate(74deg);
+    transform-origin: 50% 10%;
+}
+.torso-man__left-hand {
+    width: 21px;
+    height: 52px;
+    background: #FFC397;
+    border-radius: 50px 50px 50px 50px;
+    transform: translate(9px,44px) rotate(0deg);
+    transform-origin: 50% 10%;
+    position: relative;
+}
+.torso-man__left-hand::before {
+    content: '';
+    width: 33px;
+    height: 36px;
+    background: #FFC397;
+    position: absolute;
+    top: 36px;
+    left: -12px;
+    border-radius: 25px;
+}
+.torso-man__right-shoulder {
+    width: 39px;
+    height: 61px;
+    background: #12bb1e;
+    border-radius: 50px 50px 50px 50px;
+    transform: translate(-49px,25px) rotate(74deg);
+    transform-origin: 50% 10%;
+
+}
+.torso-man__right-hand {
+    width: 21px;
+    height: 52px;
+    background: #FFC397;
+    border-radius: 50px 50px 50px 50px;
+    transform: translate(9px,44px) rotate(0deg);
+    transform-origin: 50% 10%;
+    position: relative;
+}
+.torso-man__right-hand::before {
+    content: '';
+    width: 33px;
+    height: 36px;
+    background: #FFC397;
+    position: absolute;
+    top: 36px;
+    left: -12px;
+    border-radius: 25px;
+}
+
+
+
+
+/* ----------              bottom          ---------- */
+.man__bottom {
+    position: relative;
+  
+}
+.bottom-man__body {
+    width: 60px;
+    height: 50px;
+    background: #0e5ec0;
+    border-radius: 0px 0px 25px 25px;
+   position: relative;
+   top: 0px;
+   left: 0px;
+   z-index: 5;
+   transform: rotate(307deg);
+}
+
+
+/* левая нога */
+
+
+.bottom-man__left-leg {     /*левая нога бедро */
+    width: 25px;
+    height: 70px;
+    background: #4e83c3; 
+    border-radius: 0px 0px 25px 25px;
+    position: relative; 
+    top: -31px;
+    left: 26px;
+    z-index: 2;
+    transform: rotate(309deg);
+    transform-origin: 50% 0px;
+    animation: left-leg 3s linear 0s forwards,
+               left-leg2 1s linear 7s infinite;
+    z-index: 3;
+}
+
+@keyframes left-leg {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(39deg);
+    }
+}
+@keyframes left-leg2 {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(39deg);
+    }
+}
+
+
+
+
+.bottom-man__left-knee {  /* левая нога колено */
+    width: 15px;
+    height: 70px;
+    background: #f5c7a6;    /* поменять цвет на #1175ee; */
+    border-radius: 25px 25px 25px 25px;
+   position: absolute;
+   top: 62px;
+   left: 0px;
+   opacity: 1;
+ 
+   transform-origin: 50% 0px;
+ 
+   animation: left-knee 3s linear 0s forwards,
+            left-knee2 1s linear 7s infinite;
+}
+@keyframes left-knee {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+@keyframes left-knee2 {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+
+
+.bottom-man__left-knee::after {
+    content: '';
+    width: 40px;
+    height: 19px;
+    background: #B7723F;
+    border-radius: 25px 25px 0px 0px;
+    position: absolute;
+    top: 52px;
+    left: -25px;
+}
+
+
+
+
+
+
+/*   правая нога */
+
+
+.bottom-man__right-leg {    /* правая нога бедро */
+     width: 25px;
+    height: 70px;
+    background: #0e5ec0; 
+    border-radius: 0px 0px 25px 25px;
+    position: absolute; 
+    top: 22px;
+    left: 26px;
+    z-index: 6;
+    transform: rotate(309deg);
+    transform-origin: 50% 0px;
+    animation: right-leg 3s linear 0s forwards,
+               right-leg2 1s linear 7s infinite;
+}
+@keyframes right-leg {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(-39deg);
+    }
+}
+@keyframes right-leg2 {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(-39deg);
+    }
+}
+
+.bottom-man__right-knee {         /* правая нога колено */
+    width: 15px;
+    height: 70px;
+    background: #FFC397;   /* поменять цвет на #1175ee; */
+    border-radius: 25px 25px 25px 25px;
+   position: absolute;
+   top: 61px;
+   left: 0px;
+   opacity: 1;
+  transform-origin: 50% 0px;
+   transform: rotate(285deg);
+   animation: right-knee 3s linear 0s forwards,
+             right-knee2 1s linear 7s infinite;
+   z-index: 5;
+}
+@keyframes right-knee {
+    0% {
+        transform: rotate(-50deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-50deg);
+    }
+}
+@keyframes right-knee2 {
+    0% {
+        transform: rotate(-50deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-50deg);
+    }
+}
+.bottom-man__right-knee::after {
+    content: '';
+    width: 40px;
+    height: 19px;
+    background: #CF7948;
+    border-radius: 25px 25px 0px 0px;
+    position: absolute;
+    top: 52px;
+    left: -25px;
+}
+
+
+
+
+
+/* ===================================   watch     ========================================= */
+.page__watch {
+    background: #866969;
+    padding: 50px 0px;
+}
+
+.watch__body {
+    width: 200px;
+    height: 200px;
+    background: rgb(91, 90, 90);
+    border-radius: 50%;
+  
+}
+
+
+
+.face-watch {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-11px,-3px);
+    position: relative;
+   
+  
+}
+.face-watch::before {
+    content: '';
+    width: 6px;
+    height: 70px;
+    background: rgb(241, 41, 14);
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform-origin: 50% 20px;
+    animation: animate 12s linear infinite;
+    /* transform: rotate(180deg); */
+}
+
+.face-watch::after {
+    content: '';
+      width: 6px;
+    height: 100px;
+    background: #000;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform-origin: 50% 20px;
+    animation: animate 6s linear infinite;
+    /* transform: rotate(-180deg); */
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cloud {
+}
+.cloud__body {
+    width: 579px;
+    height: 24px;
+    background: hwb(0deg 27% 72% / 58%);
+    border-radius: 50px;
+    transform: translate(-210px,169px);
+    position: relative;
+}
+.cloud__body::after {
+    content: '';
+    width: 128px;
+    height: 24px;
+    background: hwb(0deg 27% 72% / 58%);
+    border-radius: 50px;
+    position: absolute;
+    top: 1px;
+    left: 594px;
+}
