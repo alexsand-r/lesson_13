@@ -19,3 +19,7 @@ This project uses **CSS animations** with **keyframes** and **transitions** to c
 
 These animations help enhance user experience by providing smooth visual transitions and dynamic effects.
 
+
+📫 Contact Me:
+1inboxna@gmail.com
+
