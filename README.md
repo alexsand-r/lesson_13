@@ -4,7 +4,7 @@
   <img src="img/Screenshot_1.png" alt="Image 1" width="800" height="350">
 </p>
 
-🔗 Live Demo: [ [Your GitHub Pages Link]([https:/alexsand-r.github.io/lesson_13/](https://alexsand-r.github.io/lesson_13/))](https://alexsand-r.github.io/lesson_13/)
+🔗 Live Demo: [look](https://alexsand-r.github.io/lesson_13/)
 
 
 ## This project uses CSS animations with keyframes and transitions to create smooth and dynamic animations of various elements. The car and characters are made with CSS.
